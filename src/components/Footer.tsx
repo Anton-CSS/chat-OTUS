@@ -28,7 +28,9 @@ const Footer: FC = () => {
           className="footer__input"
           placeholder="Type Your message here"
           value={value}
-          onChange={(e:React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setValue(e.target.value)
+          }
         />
         <button onClick={btnClickHandler} className="footer__btn">
           send

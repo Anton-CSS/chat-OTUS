@@ -1,4 +1,4 @@
-import {IUser} from "../type/user";
+import { IUser } from "../type/user";
 
 const config = {
   firebaseBaseUrl: "https://otus-js-chat-4ed79-default-rtdb.firebaseio.com",
@@ -8,7 +8,7 @@ const config = {
 // /**
 //  * @return {Object[]} messagesList
 //  */
- export async function getMessagesList():Promise<IUser[]> {
+export async function getMessagesList(): Promise<IUser[]> {
   return fetch(`${config.firebaseBaseUrl}/${config.firebaseCollection}`, {
     headers: {
       Accept: "application/json",
