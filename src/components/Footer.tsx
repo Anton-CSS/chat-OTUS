@@ -6,7 +6,6 @@ const Footer: FC = () => {
   const { fetchUsers } = useActions();
   const [value, setValue] = useState("");
   const btnClickHandler = () => {
-    console.log("click");
     const data = {
       date: new Date(),
       nickname: "Anton",
@@ -29,7 +28,7 @@ const Footer: FC = () => {
           className="footer__input"
           placeholder="Type Your message here"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={(e:React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}
         />
         <button onClick={btnClickHandler} className="footer__btn">
           send

@@ -1,3 +1,5 @@
+import {IUser} from "../type/user";
+
 const config = {
   firebaseBaseUrl: "https://otus-js-chat-4ed79-default-rtdb.firebaseio.com",
   firebaseCollection: "messages.json",
@@ -6,14 +8,14 @@ const config = {
 // /**
 //  * @return {Object[]} messagesList
 //  */
-export async function getMessagesList() {
+ export async function getMessagesList():Promise<IUser[]> {
   return fetch(`${config.firebaseBaseUrl}/${config.firebaseCollection}`, {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
   })
-    .then((response) => response.json())
+    .then((response): Promise<IUser[]> => response.json())
     .then((data) =>
       Object.values(data).map((el) => ({
         ...el,
@@ -28,7 +30,7 @@ export async function getMessagesList() {
 //  * @param {string} data.message
 //  * @returns {boolean}
 //  */
-export async function sendMessage(data) {
+export async function sendMessage(data: IUser) {
   return fetch(`${config.firebaseBaseUrl}/${config.firebaseCollection}`, {
     method: "POST",
     body: JSON.stringify({
