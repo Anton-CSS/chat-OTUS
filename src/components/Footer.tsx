@@ -5,6 +5,7 @@ import { useActions } from "../hook/useActions";
 const Footer: FC = () => {
   const { fetchUsers } = useActions();
   const [value, setValue] = useState("");
+
   const btnClickHandler = () => {
     const data = {
       date: new Date(),

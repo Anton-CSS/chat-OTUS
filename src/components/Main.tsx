@@ -4,12 +4,14 @@ import ItemUser from "./ItemUser";
 
 const Main: FC = () => {
   const { users } = useTypedSelector((state) => state.user);
+
   const friends: Set<string> = new Set();
   users.forEach((user) => {
     if (user.nickname) {
       friends.add(user.nickname);
     }
   });
+
   const friendsArray = Array.from(friends);
 
   return (

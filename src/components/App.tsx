@@ -8,7 +8,7 @@ import { useActions } from "../hook/useActions";
 
 const App: FC = () => {
   const { fetchUsers } = useActions();
-  const { users, error, loading } = useTypedSelector((state) => state.user);
+  const { error, loading } = useTypedSelector((state) => state.user);
   useEffect(() => {
     fetchUsers();
   }, []);
