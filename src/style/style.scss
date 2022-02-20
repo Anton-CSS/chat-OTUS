@@ -1,0 +1,285 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: url("../images/background.jpg") no-repeat center center / cover;
+  padding: 5%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  background-color: #ebf0f2;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+.header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  height: 5%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+  background-color: #a4a4a4;
+  background-image: linear-gradient(
+    to top,
+    rgba(213, 221, 224, 0.98) 0%,
+    rgba(253, 253, 253, 0.98) 100%
+  );
+  &__friends {
+    width: 30%;
+    height: 100%;
+    border-right: 1px solid gray;
+    display: flex;
+    padding-left: 10px;
+    align-items: center;
+    span {
+      display: block;
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+      border-radius: 50%;
+      &:first-child {
+        background-color: lightcoral;
+      }
+      background-color: lightyellow;
+      &:last-child {
+        background-color: lightgreen;
+      }
+    }
+  }
+  &__main {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    div {
+      &:first-child {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        width: 91px;
+        height: 23px;
+        box-shadow: 1px 1px 0 #ffffff, inset 1px 1px 0 rgba(78, 84, 89, 0.18);
+        background-color: #dadfe4;
+        background-image: linear-gradient(
+          to top,
+          rgba(255, 255, 255, 0.13) 0%,
+          rgba(0, 0, 0, 0.13) 100%
+        );
+        border-radius: 20px;
+        span {
+          display: block;
+          &:first-child {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            margin-left: 1px;
+            border-radius: 20px;
+            height: 100%;
+            box-shadow: 1px 1px 0 #9fa7ae,
+              inset 0 0 16px rgba(255, 255, 255, 0.46);
+            background-color: #f1f2f3;
+            background-image: linear-gradient(
+              to top,
+              #c8c8c8 0%,
+              #c8c8c8 1%,
+              #e5e5e5 52%,
+              #f4f4f4 55%,
+              #ffffff 100%
+            );
+            strong {
+              display: block;
+              width: 15px;
+              height: 10px;
+              background: url("../images/Email.svg") no-repeat center center /
+                cover;
+            }
+          }
+        }
+      }
+      &:last-child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 53px;
+        height: 19px;
+        margin-right: 15px;
+        border-radius: 20px;
+        box-shadow: 1px 1px 0 #ffffff, inset 1px 1px 0 rgba(78, 84, 89, 0.18);
+        background-color: #dadfe4;
+        background-image: linear-gradient(to top, #8ad223 0%, #508505 100%);
+        span {
+          display: block;
+          width: 22px;
+          height: 14px;
+          box-shadow: 1px 1px 0 #518012,
+            inset 0 0 16px rgba(255, 255, 255, 0.46);
+          background-color: #f1f2f3;
+          background-image: linear-gradient(
+            to top,
+            #c8c8c8 0%,
+            #c8c8c8 1%,
+            #e5e5e5 52%,
+            #f4f4f4 55%,
+            #ffffff 100%
+          );
+          border-radius: 20px;
+        }
+        strong {
+          display: block;
+          text-shadow: 1px 1px 0 #588f09;
+          color: #ffffff;
+          font-size: 15px;
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+.main {
+  display: flex;
+  width: 100%;
+  height: 85%;
+  border-bottom: 1px solid gray;
+  &__bar {
+    flex-basis: 30%;
+    height: 100%;
+    border-right: 1px solid gray;
+    padding-top: 15px;
+    padding-left: 10px;
+    h2 {
+      color: #9db0b7;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+  &__chat {
+    overflow: auto;
+    flex-basis: 70%;
+    height: 100%;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.24);
+    background-color: #ffffff;
+    h2 {
+      margin: 10px 0 0 10px;
+      color: #b0b7b9;
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  &__smile {
+    width: 30px;
+    height: 40px;
+    margin-right: 10px;
+    background: url("../images/smile.svg") no-repeat center center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__wrap {
+    display: flex;
+  }
+  &__input {
+    display: block;
+    padding-left: 10px;
+    width: 500px;
+    height: 40px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03),
+      inset 0 2px 3px rgba(9, 9, 9, 0.05);
+    border: 1px solid #dde0e3;
+    background-color: #ffffff;
+    outline: none;
+  }
+  &__btn {
+    display: block;
+    border: none;
+    width: 100px;
+    background: #33969a;
+    color: #152e46;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.message {
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03),
+    inset 0 -4px 9px rgba(9, 9, 9, 0.05);
+  border: 1px solid #dde0e3;
+  background-color: #ffffff;
+  &__date {
+    color: #949494;
+    font-size: 12px;
+    text-align: left;
+  }
+  &__name {
+    text-shadow: 1px 1px 0 #ffffff;
+    color: #393939;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+  }
+  &__ms {
+    margin-top: 5px;
+    color: #393939;
+    font-size: 12px;
+    font-weight: 700;
+  }
+}
+.friend {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  &__img {
+    display: block;
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+  }
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    span:last-child {
+      text-shadow: 1px 1px 0 #ffffff;
+      color: #7f8c91;
+      font-size: 11px;
+      text-align: left;
+    }
+    span:first-child {
+      color: #393939;
+      font-size: 12px;
+      font-weight: 700;
+    }
+  }
+}
